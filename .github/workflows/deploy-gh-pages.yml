@@ -2,7 +2,7 @@ name: Build and Deploy to GitHub Pages
 
 on:
   push:
-    branches: ["main"] # Change to your default branch if different (e.g., master)
+    branches: ["main"] # Sesuaikan jika branch utama kamu 'master'
 
 permissions:
   contents: read
@@ -17,8 +17,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v4 # Diupdate dari v3 ke v4
+      - uses: actions/setup-node@v4 # Diupdate dari v3 ke v4
         with:
           node-version: 18
       - name: Install dependencies
@@ -26,9 +26,9 @@ jobs:
       - name: Build Eleventy
         run: npx @11ty/eleventy
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3 # Diupdate dari v2 ke v3 (menggunakan upload-artifact v4 di baliknya)
         with:
-          path: '_site' # Ensure this matches your output directory in .eleventy.js
+          path: '_site' # Pastikan folder ini sesuai dengan output Eleventy kamu
 
   deploy:
     environment:
@@ -38,4 +38,4 @@ jobs:
     needs: build
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2   
+        uses: actions/deploy-pages@v4 # Diupdate dari v2 ke v4
