@@ -1,12 +1,11 @@
 ---
-title: Hello World!
+title: Alink
 description: I am the home page of this project
 layout: libdoc_page.liquid
 permalink: index.html
 tags:
     - widgets
 ---
-{% alert 'It seems to be the beginning of a great documentation story!', 'success', 'Howdy!' %}
 
 ## Let’s start!
 
