@@ -20,7 +20,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 22 # 💡 UPDATED: Node 18 is EOL; Node 22/24 prevents compatibility issues with upload v4
+          node-version: 24 # 💡 UPDATED: Node 18 is EOL; Node 22/24 prevents compatibility issues with upload v4
           cache: 'npm'     # 💡 BONUS: Speeds up your build
       - name: Install dependencies
         run: npm ci        # 💡 BONUS: 'npm ci' is cleaner and faster for CI/CD than 'npm install'
